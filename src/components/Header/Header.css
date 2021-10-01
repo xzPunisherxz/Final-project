@@ -1,0 +1,18 @@
+.list {
+  list-style: none;
+  display: flex;
+  text-transform: uppercase;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.list li {
+  margin: 20px 15px;
+  font-size: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
