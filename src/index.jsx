@@ -10,6 +10,11 @@ import { SignUp } from "./components/SignUp";
 import axios from "axios";
 import { Main } from "./components/Main";
 import { Report } from "./components/Report";
+import { Detail } from "./components/Detail";
+import { Employees } from "./components/Employees";
+import { EmployeeList } from "./components/EmloyeeList";
+import { StolenBikes } from "./components/StolenBikes";
+
 
 
 export const App = () => {
@@ -17,7 +22,7 @@ export const App = () => {
     const [isLogin, setIsLogin]=useState()
     const [active, setActive]=useState(false)
     const [email, setEmail]=useState("")
-    const [password, setPassowrd]=useState("")
+    const [password, setPassword]=useState("")
     const [data, setData]=useState(null)
     const [isError, setIsError]=useState(false);
 
@@ -32,7 +37,7 @@ export const App = () => {
     axios.post("http://84.201.129.203:8888/api/auth/sign_in", data, { headers }).then(res => {
       setData(res.data);
       setEmail("");
-      setPassowrd("");
+      setPassword("");
       setActive(false);
       setIsLogin(true);
       localStorage.setItem("token",res.data.token)
@@ -40,7 +45,7 @@ export const App = () => {
     }).catch(err => {
       setIsError(true);
       setEmail("");
-      setPassowrd("")
+      setPassword("")
     });
   }
 
@@ -51,13 +56,17 @@ export const App = () => {
 return (
     <>
     <div className="wrapper">
-      <StoreApi.Provider value={{handleSubmit, isLogin, setIsLogin, data, setData, email, setEmail, isError, setIsError, password, setPassowrd}}>
+      <StoreApi.Provider value={{handleSubmit, isLogin, setIsLogin, data, setData, email, setEmail, isError, setIsError, password, setPassword}}>
         <Header setActive={setActive} active={active}/>
         <SignIn setActive={setActive} active={active}/>        
         <Route exact path ="/" component={Main}/>
       </StoreApi.Provider>
       <Route path = "/signUp" component={SignUp}/>
-      <Route path = "/report" component={Report}/>      
+      <Route path = "/report" component={Report}/>  
+      <Route path = "/detail" component={Detail}/>
+      <Route path = "/employees" component={Employees}/>
+      <Route path = "/employeelist" component={EmployeeList}/>
+      <Route path = "/stolenbikes" component={StolenBikes}/>    
     </div>
     </>
   )

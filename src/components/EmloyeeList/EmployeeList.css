@@ -1,0 +1,11 @@
+.delete-btn {
+  background: red;
+}
+.approve-btn {
+  background-color: green;
+}
+.wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

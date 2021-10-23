@@ -21,7 +21,7 @@ export const SignUp = () => {
             email,
             password,
             repassword,
-            clienId:"e71239e6-67d5-49e2-8ad3-1c845e3042de"
+            clientId:"e71239e6-67d5-49e2-8ad3-1c845e3042de"
         };
         const headers = {
             "Content-Type":"application/json",

@@ -10,8 +10,8 @@ export const Main = () => {
     if(isLogin){
         bikes = (
             <div className="auth-div">
-                <Link className="auth-title" to="/stolen">Украденные велосипеды</Link>
-                <Link className="auth-title" to="employess">Ответсвенные сотрудники</Link>
+                <Link className="auth-title" to="/stolenbikes">Украденные велосипеды</Link>
+                <Link className="auth-title" to="employees">Ответсвенные сотрудники</Link>
             </div>
         )
     }

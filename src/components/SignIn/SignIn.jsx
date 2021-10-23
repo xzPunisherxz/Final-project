@@ -3,24 +3,26 @@ import "./SignIn.css";
 import { Link } from "react-router-dom";
 import store from "../../data/store";
 
+
 export const SignIn = ({active, setActive}) => {
     const {
         handleSubmit,
+        password,
+        setPassword,
         data,
         setData,
         email,
         setEmail,
         isError,
         setIsError,
-        password,
-        setPassword
-    } = useContext(store)
+        
+    } = useContext(store);
 
     return (
         <div className={active
         ? "signIn-window active"
         : "signIn-window"}
-        onClick={() => setActive(true)}>
+        onClick={() => setActive(false)}>
             <form 
             className="signIn"
             onSubmit={handleSubmit}
@@ -33,7 +35,7 @@ export const SignIn = ({active, setActive}) => {
                 placeholder="Введите ваш e-mail"
                 onChange={e => setEmail(e.target.value)}></input>
                 <input 
-                type="text"
+                type="password"
                 value={password}
                 placeholder="Введите ваш пароль"
                 onChange={e => setPassword(e.target.value)}></input>

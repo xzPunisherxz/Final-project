@@ -21,7 +21,7 @@ export const Header = ({active, setActive}) => {
         )
     } else button = (
         <li>
-            <Link className="link" onClick={() => setActive=(true)}>Вход</Link>
+            <Link className="link" to="" onClick={() => setActive=(true)}>Вход</Link>
         </li>
     )
     return (

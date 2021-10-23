@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import axois from "axios";
 import "./Report.css";
 import axios from "axios";
 
 export const Report = () => {
     const [isSubmit,setSubmit]=useState()
-    const [licenseNamber,setLicense]=useState("")
+    const [licenseNumber,setLicenseNumber]=useState("")
     const [date,setDate]=useState("")
     const [color,setColor]=useState("")
     const [type,setType]=useState("")
@@ -22,7 +21,7 @@ export const Report = () => {
         const data = {
             status: "new",
             date,
-            licenseNamber,
+            licenseNumber,
             color,
             type: type,
             ownerFullName,
@@ -32,13 +31,13 @@ export const Report = () => {
         }
         axios.post("http://84.201.129.203:8888/api/public/report",data).then(res => {
             setData(res.data)
-            setLicense("")
+            setLicenseNumber("")
             setName("")
             setColor("")
             setType("")
             setDate("")
             setSubmit(true)
-            console.log(rex.data)
+            console.log(res.data)
         }).catch(err => {
             console.log(err)
         });
@@ -47,25 +46,25 @@ export const Report = () => {
         <div>
             <h1 className="modal-text">Сообщить о краже</h1>
             <form onSubmit={handleSubmit} className="report">
-                <lable>Имя владельца</lable>
-                <input className="report-input" text="text" onChange={(e) => setName(e.target.value)} value={ownerFullName}></input>
+                <label>Имя владельца</label>
+                <input className="report-input" type="text" onChange={(e) => setName(e.target.value)} value={ownerFullName}></input>
 
-                <lable>Номер</lable>
-                <input className="report-input" text="text" onChange={(e) => setLicense(e.target.value)} value={licenseNamber}></input>
+                <label>Номер</label>
+                <input className="report-input" type="text" required onChange={(e) => setLicenseNumber(e.target.value)} value={licenseNumber}></input>
 
-                <lable>Дата кражи</lable>
-                <input className="report-input" text="date" onChange={(e) => setDate(e.target.value)} value={date}></input>
+                <label>Дата кражи</label>
+                <input className="report-input" type="date" onChange={(e) => setDate(e.target.value)} value={date}></input>
 
-                <lable>Цвет</lable>
-                <input className="report-input" tetx="text" onChange={(e) => setColor(e.target.value)} value={color}></input>
+                <label>Цвет</label>
+                <input className="report-input" type="text" onChange={(e) => setColor(e.target.value)} value={color}></input>
 
-                <lable className="type">Тип</lable>
+                <label className="text">Тип</label>
                 <select onChange={handleChange}>
                     <option value="sport">Sport</option>
                     <option value="general">General</option>
                 </select>
                 <button className="signUp-btn" type="submit">Отправить</button>
-                {isSubmit&& <small className="report-text">Отправлено</small>}
+                {isSubmit && <small className="report-text">Отправлено</small>}
             </form>
         </div>
     )
