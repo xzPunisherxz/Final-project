@@ -18,17 +18,17 @@ export const StolenBikes = () => {
 
         axios.delete(`http://84.201.129.203:8888/api/cases/${item._id}`, {
             headers:{
-                Authorization: "Bearer" + localStorage.getItem("token")
+                Authorization: "Bearer " + localStorage.getItem("token")
             }
         }).then(()=>loadData())
     }
     const handleInputValue = (e) => {
         const value = e.target.value
         setInputValue(value)
-        const objectIdx = + e.selectedOptions[0].getAttribute("objectindex");
+        const objectIdx = + e.target.selectedOptions[0].getAttribute("objectindex");
         const items = [...data]
 
-        const item = {...item[objectIdx]}
+        const item = {...items[objectIdx]}
         item.status = value
         items[objectIdx] = item
         setData(items)
@@ -45,7 +45,7 @@ export const StolenBikes = () => {
         }
         axios.put(`http://84.201.129.203:8888/api/cases/${item._id}`,item, {
             headers: {
-                Authorization: "Bearer" + localStorage.getItem("token")
+                Authorization: "Bearer " + localStorage.getItem("token")
             }
         }).then(() => loadData())
     }
@@ -63,7 +63,7 @@ export const StolenBikes = () => {
 
         const response = await axios.get("http://84.201.129.203:8888/api/cases", {
             headers: {
-                Authorization: "Bearer" + localStorage.getItem("token")
+                Authorization: "Bearer " + localStorage.getItem("token")
             }
         })
         setData(response.data)
@@ -112,7 +112,7 @@ export const StolenBikes = () => {
                         }
                         >Изменить</button>
                         <Link to={{
-                            pathname: "/deatil",
+                            pathname: "/detail",
                             state: item,
                         }}><button className="detail-btn">Подробно</button></Link>
                     </div>

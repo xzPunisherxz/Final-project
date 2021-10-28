@@ -20,7 +20,7 @@ export const Report = () => {
         e.preventDefault()
         const data = {
             status: "new",
-            date,
+            date: new Date(),
             licenseNumber,
             color,
             type: type,

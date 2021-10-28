@@ -1,4 +1,4 @@
-/* .signIn-window {
+.signIn-window {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
@@ -12,7 +12,7 @@
 }
 .signIn-window.active {
   transform: scale(1);
-} */
+}
 .signIn {
   width: 340px;
   height: 300px;

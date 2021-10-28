@@ -2,6 +2,7 @@ import "./Header.css";
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import store from "../../data/store";
+import  logo  from "./img/Header-Bike.png";
 
 
 export const Header = ({active, setActive}) => {
@@ -21,7 +22,7 @@ export const Header = ({active, setActive}) => {
         )
     } else button = (
         <li>
-            <Link className="link" to="" onClick={() => setActive=(true)}>Вход</Link>
+            <Link className="link" to="" onClick={() => setActive(true)}>Вход</Link>
         </li>
     )
     return (
@@ -31,6 +32,7 @@ export const Header = ({active, setActive}) => {
                    <li>
                        <Link className="link" to="/">Главная</Link>
                    </li>
+                   <img src={logo} className="header-img"/>
                    {button}
                 </ul>
            </div>

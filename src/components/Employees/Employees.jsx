@@ -22,7 +22,7 @@ export const Employees = () => {
         }
         axios.post("http://84.201.129.203:8888/api/officers",data, {
             headers:{
-                Authorization: "Bearer" +localStorage.getItem("token")
+                Authorization: "Bearer " +localStorage.getItem("token")
             }
         }).then(res => {
             setData(res.data)
@@ -49,7 +49,7 @@ export const Employees = () => {
 
                 <button className="signUp-btn" type="submit">Отправить</button>
                 {isSubmit && <small className="report-text">Отправлено.</small>}
-                <Link to="/employeelist">Список сотрудников</Link> 
+                <Link className="link" to="/employeelist">Список сотрудников</Link> 
             </form>
         </div>
     )

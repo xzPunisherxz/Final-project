@@ -1,11 +1,33 @@
 .auth-title {
-  position: relative;
-
-  color: black;
+  display: inline-block;
+  width: 20em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: #2e7ebd 0 1px 2px;
   text-decoration: none;
-  border: 1px solid #00a4b7;
-  padding: 10px 7px;
-  margin-top: 10px;
+  text-align: center;
+  line-height: 1.1;
+  white-space: pre-line;
+  padding: 0.7em 0;
+  border: 1px solid;
+  border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+  border-radius: 6px;
+  outline: none;
+  background: #60a3d8 linear-gradient(#89bbe2, #60a3d8 50%, #378bce);
+  box-shadow: inset rgba(255, 255, 255, 0.5) 1px 1px;
+}
+a.button13:first-line {
+  font-size: 170%;
+  font-weight: 700;
+}
+a.button13:hover {
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(#9dc7e7, #74afdd 50%, #378bce);
+}
+a.button13:active {
+  color: rgb(255, 255, 255);
+  border-color: #2970a9;
+  background-image: linear-gradient(#5796c8, #6aa2ce);
+  box-shadow: none;
 }
 .auth-div {
   display: flex;
@@ -23,12 +45,20 @@
 }
 
 .main-title {
-  border: 1px solid #00a4b7;
+  border: 2px solid #12dbf1;
   padding: 10px;
+  font-size: 20px;
+  background-color: rgba(54, 66, 241, 0.808);
 }
 .report-msg {
   background-color: rgb(196, 247, 221);
   text-decoration: none;
-  color: red;
-  font-size: 23px;
+  color: rgba(175, 17, 17, 0.842);
+  font-size: 24px;
+}
+.main-img1 {
+  float: left;
+}
+.main-img2 {
+  float: right;
 }

@@ -9,7 +9,7 @@ export const EmployeeList = () => {
 
     const handleApprove = (e) => {
         e.preventDefault();
-        const personIdx = + e.target.attributes.getNamedId("approveperson").value
+        const personIdx = + e.target.attributes.getNamedItem("approveperson").value
         const person = data[personIdx]
         const persons = [...data]
         const onePerson = {...persons[personIdx]}
@@ -18,7 +18,7 @@ export const EmployeeList = () => {
             person.approved=true
             axios.put(`http://84.201.129.203:8888/api/officers/${person._id}`,person,{
                 headers:{
-                    Authorization: "Bearer" + localStorage.getItem("token")
+                    Authorization: "Bearer " + localStorage.getItem("token")
                 }
             }).then(() => loadData())
         }
@@ -27,12 +27,12 @@ export const EmployeeList = () => {
     const handleDelete = (e) => {
         e.preventDefault();
 
-        const itemIdx = + e.target.attributes.getNamedId("deleteperson").value
+        const itemIdx = + e.target.attributes.getNamedItem("deleteperson").value
         const person = data[itemIdx]
 
         axios.delete(`http://84.201.129.203:8888/api/officers/${person._id}`,{
             headers:{
-                Authorization: "Bearer" + localStorage.getItem("token")
+                Authorization: "Bearer " + localStorage.getItem("token")
             }
         }).then(() => loadData())
     }
@@ -42,7 +42,7 @@ export const EmployeeList = () => {
 
         const response = await axios.get(`http://84.201.129.203:8888/api/officers`,{
             headers:{
-                Authorization: "Bearer" + localStorage.getItem("token")
+                Authorization: "Bearer " + localStorage.getItem("token")
             }
         })
         setData(response.data)
@@ -65,7 +65,7 @@ export const EmployeeList = () => {
             />) :(
                 <div className="wrap">
                     <h1>Список сотрудников</h1>
-                    <table border="1">
+                    <table border="3">
                         <thead>
                             <tr>
                                 <th>Имя</th>
@@ -78,8 +78,8 @@ export const EmployeeList = () => {
                             {
                                 data.map((person,index) => 
                                 <tr key={person._id}>
-                                    <td>{person.firsName}</td>
-                                    <td>{person.lastNmae}</td>
+                                    <td>{person.firstName}</td>
+                                    <td>{person.lastName}</td>
                                     <td>{person.email}</td>
                                     <td>{person.approved.toString()}</td>
                                     <td><button className="approve-btn" onClick={handleApprove} approveperson={index}>Одобрить</button></td>
