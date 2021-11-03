@@ -21,6 +21,7 @@ export const SignUp = () => {
             email,
             password,
             repassword,
+            approved:(true),
             clientId:"e71239e6-67d5-49e2-8ad3-1c845e3042de"
         };
         const headers = {
@@ -38,6 +39,7 @@ export const SignUp = () => {
             console.log(err)
             setIsError(true)
         });
+
     }
 
     return (

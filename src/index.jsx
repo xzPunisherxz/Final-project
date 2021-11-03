@@ -18,8 +18,8 @@ import { StolenBikes } from "./components/StolenBikes";
 
 
 export const App = () => {
-
-    const [isLogin, setIsLogin]=useState()
+    const token = !!localStorage.getItem('token')
+    const [isLogin, setIsLogin]=useState(token)
     const [active, setActive]=useState(false)
     const [email, setEmail]=useState("")
     const [password, setPassword]=useState("")
@@ -41,6 +41,7 @@ export const App = () => {
       setActive(false);
       setIsLogin(true);
       localStorage.setItem("token",res.data.token)
+      
 
     }).catch(err => {
       setIsError(true);
