@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
+.wrapper {
+  max-width: 1110px;
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+}

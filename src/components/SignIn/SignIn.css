@@ -1,0 +1,72 @@
+.signIn-window {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+}
+.signIn-window.active {
+  transform: scale(1);
+}
+.signIn {
+  width: 340px;
+  height: 300px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+}
+input {
+  color: rgb(15, 1, 1);
+  padding-left: 10px;
+  margin: 12px 10px 10px 18px;
+  width: 290px;
+  height: 35px;
+  border: 1px solid #c7d0d2;
+  outline: none;
+  border-radius: 2px;
+}
+
+.btn {
+  outline: none;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  font-size: 90%;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: #2e7ebd 0 1px 2px;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+  border: 1px solid;
+  border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+  border-radius: 6px;
+  box-shadow: inset rgba(255, 255, 255, 0.5) 1px 1px;
+  background: #60a3d8 linear-gradient(#89bbe2, #60a3d8 50%, #378bce);
+}
+.signIn-btn {
+  width: 20em;
+
+  padding: 10px 24px;
+}
+.auth-link {
+  color: royalblue;
+  float: right;
+  margin: 5px;
+}
+.signIn-text {
+  text-align: center;
+}
+
+.text-danger {
+  color: red;
+  font-weight: bold;
+  padding-left: 5%;
+}

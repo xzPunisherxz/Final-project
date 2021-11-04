@@ -1,0 +1,25 @@
+.report {
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #00a4b7;
+  padding: 16px;
+  width: 40%;
+}
+
+.report-input {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.report-text {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+.type {
+  margin-right: 20px;
+}

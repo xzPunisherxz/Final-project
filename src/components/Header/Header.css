@@ -1,0 +1,19 @@
+.list {
+  list-style: none;
+  display: flex;
+  text-transform: uppercase;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.list li {
+  margin: 20px 15px;
+  font-size: 28px;
+}
+
+.header {
+  background-color: rgb(66, 250, 66);
+  display: flex;
+  justify-content: space-between;
+}
